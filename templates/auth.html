@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./static/assets/css/dashlite.css?ver=2.6.0" />
+		<link rel="stylesheet" href="./static/assets/css/styles.css?ver=2.6.0" />
+		<link rel="stylesheet" href="./static/assets/css/auth.css" />
+		<title>Sign in</title>
+	</head>
+	<body>
+		<div class="loginBox">
+			<nav>
+				<div class="active" id="signUpButton">Sign Up</div>
+				<div id="loginButton">Login</div>
+			</nav>
+			<div class="content">
+				<!-- Sign up form -->
+				<form id="signUpForm">
+					<input type="text" name="name" placeholder="Full name" />
+					<input type="text" name="email" placeholder="Email" />
+					<input type="password" name="password" placeholder="Password" />
+					<button class="btn btn-md btn-primary">Sign up</button>
+				</form>
+
+				<!-- Log in form -->
+				<form id="loginForm" class="hide">
+					<input type="text" name="email" placeholder="Email" />
+					<input type="password" name="password" placeholder="Password" />
+					<button class="btn btn-md btn-primary">Login</button>
+				</form>
+			</div>
+
+			<div id="formError"></div>
+		</div>
+
+		<script type="module" src="./static/assets/js/auth.js"></script>
+	</body>
+
+
+</html>

@@ -1,0 +1,446 @@
+<!--*!
+* Template Name: DashLite
+* Author: Softnio
+* Author URI: http://themeforest.net/user/softnio
+* Version: 2.6.0
+* Updated: 06.29.2021
+**/
+-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./static/assets/css/dashlite.css?ver=2.6.0">
+    <link rel="stylesheet" href="./static/assets/css/styles.css?ver=2.6.0">
+    <title>DASHBOARD</title>
+</head>
+
+<body class="nk-body bg-white has-sidebar ">
+    <div class="nk-app-root">
+        <!-- main @s -->
+        <div class="nk-main ">
+            <!-- sidebar @s -->
+            <div class="nk-sidebar nk-sidebar-fixed" data-content="sidebarMenu">
+                <div class="nk-sidebar-element nk-sidebar-head">
+                    <div class="nk-sidebar-brand">
+                        <a href="javascript:void(0);" class="logo-link nk-sidebar-logo">
+                            <h5 class="show_name"> </h5>
+                        </a>
+                    </div>
+                    <div class="nk-menu-trigger mr-n2">
+                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon d-xl-none" data-target="sidebarMenu"><em
+                                class="icon ni ni-arrow-left"></em></a>
+                    </div>
+                </div><!-- .nk-sidebar-element -->
+                <div class="nk-sidebar-element">
+                    <div class="nk-sidebar-body" data-simplebar>
+                        <div class="nk-sidebar-content">
+                            <div class="nk-sidebar-menu">
+                                <ul class="nk-menu">
+                                    <li class="nk-menu-item">
+                                        <a href="" class="nk-menu-link">
+                                            <span class="nk-menu-icon"><em
+                                                    class="icon active ni ni-dashboard"></em></span>
+                                            <span class="nk-menu-text">Dashboard</span>
+                                        </a>
+                                    </li>
+                                </ul><!-- .nk-menu -->
+                            </div><!-- .nk-sidebar-menu -->
+                        </div><!-- .nk-sidebar-content -->
+                    </div><!-- .nk-sidebar-body -->
+                </div><!-- .nk-sidebar-element -->
+            </div>
+            <!-- sidebar @e -->
+            <!-- wrap @s -->
+            <div class="nk-wrap ">
+                <!-- main header @s -->
+                <div class="nk-header nk-header-fixed is-light">
+                    <div class="container-fluid">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger d-xl-none ml-n1">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="sidebarMenu"><em
+                                        class="icon ni ni-menu"></em></a>
+                            </div>
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <div id="userName"></div>
+                                    <li class="dropdown user-dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar sm">
+                                                    <em class="icon ni ni-user-fill"></em>
+                                                </div>
+                                                <div class="user-info d-none d-md-block">
+                                                    <div class="user-name dropdown-indicator show_email"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div
+                                            class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1">
+                                            <div id="userName_dropdown"
+                                                class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li><a id="logout" href="javascript:void(0);"><em
+                                                                class="icon ni ni-signout" id="logout"></em><span>Sign
+                                                                out</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul><!-- .nk-quick-nav -->
+                            </div><!-- .nk-header-tools -->
+                        </div><!-- .nk-header-wrap -->
+                    </div><!-- .container-fliud -->
+                </div>
+                <!-- main header @e -->
+                <!-- content @s -->
+                <div class="nk-content nk-content-fluid">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-content-body">
+                            <div class="nk-block-head nk-block-head-sm">
+                                <div class="nk-block-between">
+                                    <div class="nk-block-head-content">
+                                        <h3 class="nk-block-title page-title">Stocks Dashboard</h3>
+                                    </div><!-- .nk-block-head-content -->
+                                    <div class="nk-block-head-content">
+                                        <div class="toggle-wrap nk-block-tools-toggle">
+                                            <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1"
+                                                data-target="pageMenu"><em class="icon ni ni-more-v"></em></a>
+                                            <div class="toggle-expand-content" data-content="pageMenu">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div><!-- .nk-block-between -->
+                            </div><!-- .nk-block-head -->
+                            <div class="nk-block">
+                                <div class="row g-gs">
+                                    <div class="col-lg-12">
+                                        <form id="fetch_result">
+                                            <div class="form-group">
+                                                <div class="form-control-wrap">
+                                                    <select name="choice" id="choice" multiple="multiple"
+                                                        class="form-select">
+                                                        <option value="">Select Stock Type</option>
+                                                        <option value="AAPL">AAPL</option>
+                                                        <option value="FB">FB</option>
+                                                        <option value="GOOGL">GOOGL</option>
+                                                        <option value="MSFT">MSFT</option>
+                                                        <option value="TSLA">TSLA</option>
+                                                        <option value="AMZN">AMZN</option>
+                                                        <option value="DIS">DIS</option>
+                                                        <option value="CVX">CVX</option>
+                                                        <option value="TGT">TGT</option>
+                                                        <option value="TWTR">TWTR</option>
+                                                        <option value="WBD">WBD</option>
+                                                        <option value="WMT">WMT</option>
+                                                        <option value="BABA">BABA</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="mr-2 form-control-wrap">
+                                                    <select name="analysis_type" id="analysis_type"
+                                                        class="form-control form-control-sm">
+                                                        <option value="">Select Graph Type</option>
+                                                        <option value="volatility">Volatility</option>
+                                                        <option value="daily percentage change">Daily
+                                                            Percentage Change</option>
+                                                        <option value="simple moving averages">Simple Moving
+                                                            Averages</option>
+                                                        <option value="bollinger bands">Bollinger Bands
+                                                        </option>
+                                                        <option value="cumulative daily returns">Cumulative
+                                                            Daily Returns</option>
+                                                        <option value="daily log returns">Daily Log Returns
+                                                        </option>
+                                                        <option value="sharpe ratio">Sharpe Ratio</option>
+                                                        <option value="closing price">closing price</option>
+                                                        <option value="cumulative monthly returns">cumulative monthly
+                                                            returns</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-control-wrap">
+                                                    <input type="text" data-date-format="yyyy-mm-dd"
+                                                        placeholder="Start date" id="start_date" name="start_date"
+                                                        class="mr-2 form-control form-control-sm date-picker">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="form-control-wrap">
+                                                    <input type="text" data-date-format="yyyy-mm-dd"
+                                                        placeholder="End date" name="end_date" id="end_date"
+                                                        class="mr-2 form-control form-control-sm date-picker">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-md btn-primary btn-block" type="submit"
+                                                    id="submit"><i class="ni fa-2x ni-arrow-right"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="card card-bordered h-100">
+                                            <canvas class="order-overview-chart" id="show_graph"></canvas>
+                                        </div><!-- .card -->
+                                    </div>
+                                </div><!-- .row -->
+                            </div><!-- .nk-block -->
+
+
+                             <div class="nk-block">
+                                <div class="row g-gs">
+                                    <div class="col-lg-12">
+                                        <form id="form_prediction">
+                                            <div class="form-group">
+                                                <div class="mr-2 form-control-wrap">
+                                                    <select name="prediction_type" id="prediction_type"
+                                                        class="form-control form-control-sm">
+                                                        <option value="">Select Prediction Type</option>
+                                                        <option value="baba">BABA</option>
+                                                        <option value="aapl">AAPL</option>
+                                                        <option value="amzn">AMZN</option>
+                                                        <option value="dis">DIS</option>
+                                                        <option value="cvx">CVX</option>
+                                                        <option value="fb">FB</option>
+                                                        <option value="googl">GOOGL</option>
+                                                        <option value="msft">MSFT</option>
+                                                        <option value="tgt">TGT</option>
+                                                        <option value="tsla">TSLA</option>
+                                                        <option value="twtr">TWTR</option>
+                                                        <option value="wbd">WBD</option>
+                                                        <option value="wmt">WMT</option>
+
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button class="btn btn-md btn-primary btn-block" type="submit"
+                                                    id="submit_prediction"><i class="ni fa-2x ni-arrow-right"></i></button>
+                                            </div>
+                                            <div id="prediction_value">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div><!-- .row -->
+                            </div><!-- .nk-block -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- content @e -->
+                <!-- footer @s -->
+                <!-- footer @e -->
+            </div>
+            <!-- wrap @e -->
+        </div>
+        <!-- main @e -->
+    </div>
+
+    <script src="./static/assets/js/bundle.js?ver=2.6.0"></script>
+    <script src="./static/assets/js/scripts.js?ver=2.6.0"></script>
+    <script src="./static/assets/js/charts/gd-default.js?ver=2.6.0"></script>
+    <script type="module" src="./static/assets/js/dashboard.js"></script>
+
+    <script>
+        // checkIFLoggedIn();
+        $(document).ready(function () {
+
+            function formatData(data) {
+                const result = [];
+                Object.keys(data).forEach(item => {
+                    result.push({
+                        graph_label: item,
+                        graph_data: data[item]
+                    });
+                });
+                return result;
+            }
+
+            const shuffleArrayList = array => {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            $(document).on('submit', '#fetch_result', function (event) {
+                event.preventDefault();
+                if ($("#start_date").val() !== '' || $("#end_date").val() !== '' || $("#choice").val() !== '' || $("#analysis_type").val() !== '') {
+
+                    $("#submit").html('<i class="ni spin fa-2x ni-loader"></i>');
+                    $("#submit").prop('disabled', true);
+
+                    stockList = [];
+                    var selected = $('#choice').select2("data");
+                    for (var i = 0; i <= selected.length - 1; i++) {
+                        stockList.push(selected[i].text);
+                    }
+
+                //proccesses the form data takes the data from the front end to the back end
+                    data = new FormData(this)
+
+
+                    data.append("stockList", stockList)
+                    $.ajax({
+                        url: '/api',
+                        method: "POST",
+
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        dataType: "json",
+                        success: function (data) {
+                            const graphData = formatData(data.data);
+
+                            const label_names = [];
+                            const label_data = [];
+                            const colors = ['#72D7F0', '#FAB5B5', '#94FC8D', '#FAC157', '#57FAD5', '#579FFA', '#E957FA'];
+
+                            //groups the graph data by stock to conform to chart.js required format
+
+                            for (var i = 0; i < graphData.length; i++) {
+                                for (const [key, value] of Object.entries(graphData[i].graph_data)) {
+                                    const date = new Date(parseInt(key)), stockValue = value == null ? 0 : value;
+                                    const labelDate = new Date(`${date.getFullYear()}-${date.getMonth()}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`).toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+                                    if (labelDate.includes('Invalid ') === false) {
+                                        label_names.push(labelDate)
+                                    }
+                                }
+                                if (i >= 0) {
+                                    break;
+                                }
+                            }
+
+
+
+                            //chart.js json initialization
+                            const lineGraphData = {
+                                labels: label_names,
+                                dataUnit: 'USD',
+                                datasets: graphData.map(i => {
+                                    const Gdata = [];
+                                    for (const [key, value] of Object.entries(i.graph_data)) {
+                                        const stockValue = value == null ? 0 : value
+                                        Gdata.push(stockValue);
+                                    }
+                                    return {
+                                        label: i.graph_label,
+                                        data: Gdata,
+                                        fill: false,
+                                        borderColor: shuffleArrayList(colors)[0],
+                                        tension: 0.1,
+                                        borderWidth: 1
+                                    }
+                                })
+                            };
+
+                            const bar_options = {
+                                responsive: true,
+                                interaction: {
+                                    intersect: true,
+                                },
+
+                                scales:
+                                {
+                                    x: { display: false, grid: { display: false, drawTicks: false, drawBorder: true, showXAxisLabel: false }, ticks: { display: false } },
+                                    y: { grid: { display: false, drawBorder: true, drawBorder: true }, ticks: { display: false } },
+                                },
+                                plugins: { legend: { display: false } }
+                            }
+
+                            if (window.bar != undefined)
+                                window.bar.destroy();
+
+                            // function that handles graph plotting
+                            window.bar = new Chart(
+                                document.getElementById("show_graph").getContext("2d"),
+                                { type: "line", data: lineGraphData, options: bar_options }
+                            );
+
+                        },
+                        error: function (xhr, status, error) {
+                            alert('Server error');
+                        },
+                        complete: function () {
+                            setTimeout(function () {
+                                $("#submit").html('<i class="ni fa-2x ni-arrow-right"></i>');
+                                $("#submit").prop("disabled", false);
+                            }, 500);
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
+
+
+
+
+            $(document).on('submit', '#form_prediction', function (event) {
+                event.preventDefault();
+
+                //if the user has selected a stck type for prediction
+                if ($("#prediction_type").val() !== '') {
+                    //ADDS A spinner to show its loading
+                    $("#submit_prediction").html('<i class="ni spin fa-2x ni-loader"></i>');
+                    //disabled the button from being clicked again while back end is still prrocessing the request for one
+                    $("#submit_prediction").prop('disabled', true);
+
+                    //proccesses the form data takes the data from the front end to the back end
+                    data = new FormData(this)
+
+                    //send the data to the backend through the url
+                    $.ajax({
+                        url: '/prediction',
+                        method: "POST",
+
+                        data: data,
+                        processData: false,
+                        contentType: false,
+                        dataType: "json",
+                        success: function (data) {
+                            const value = data.data;
+                            $("#prediction_value").html(value);
+
+                        },
+                        error: function (xhr, status, error) {
+                            alert('Server error');
+                        },
+                        complete: function () {
+                            setTimeout(function () {
+                                $("#submit_prediction").html('<i class="ni fa-2x ni-arrow-right"></i>');
+                                $("#submit_prediction").prop("disabled", false);
+                            }, 500);
+                        }
+                    });
+                } else {
+                    return false;
+                }
+            });
+
+
+
+        });
+    </script>
+</body>
+
+
+
+
+</html>

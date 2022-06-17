@@ -1,0 +1,138 @@
+.spin {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 4000ms;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-name: spin;
+    -moz-animation-duration: 4000ms;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: linear;
+    -ms-animation-name: spin;
+    -ms-animation-duration: 4000ms;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+    
+    animation-name: spin;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-ms-keyframes spin {
+    from { -ms-transform: rotate(0deg); }
+    to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+.chart-footer-text {
+  font-size: 15px;
+  align-self: flex-end;
+}
+#info{border: 1px solid transparent;}
+#info:focus{
+  outline: none;
+  border-color: transparent;
+}
+#info1{border: 1px solid transparent;}
+#info1:focus{
+  outline: none;
+  border-color: transparent;
+}
+.graph{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.marker {
+  width: '20px';
+  height: '20px';
+  background-size: '100%';
+}
+.pdfobject-container { 
+  height: 700px; 
+  width:100%;
+  border: 1rem solid rgba(0,0,0,.1); 
+}
+.docu {
+  width: 700px;
+}
+.word-wrap { 
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+}
+[data-notify="progressbar"] {
+  margin-bottom: 0px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 5px;
+}
+.refresh{
+  font-size:20px;
+  color:#000000;
+  text-decoration:none;
+}
+.uk-img{
+  max-width:100%;
+  max-height:100%;
+}
+#low{
+  height: 12px;
+  width: 12px;
+  background-color: darkred;
+  border-radius: 50%;
+  display: inline-block;
+  text-align:center;
+}
+#on{
+  height: 12px;
+  width: 12px;
+  background-color: #E0A800;
+  border-radius: 50%;
+  display: inline-block;
+  text-align:center;
+}
+#off{
+  height: 12px;
+  width: 12px;
+  background-color: grey;
+  border-radius: 50%;
+  display: inline-block;
+  text-align:center;
+}
+.field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-right: 10px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 2;
+}
+#high{
+  height: 12px;
+  width: 12px;
+  background-color: #1ABE00;
+  border-radius: 50%;
+  display: inline-block;
+  text-align:center;
+}
+.confirm {
+  font-weight:bold;
+}
