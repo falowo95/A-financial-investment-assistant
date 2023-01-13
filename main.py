@@ -60,13 +60,10 @@ def bollinger_bands(choice, start_date, end_date):
     data['20_day'] = data['Adj Close'].rolling(20).mean()
 
     data["std"] = data['Adj Close'].rolling(20).std()
-
     data["bollinger_up"] = data["20_day"] + data["std"] * 2  # Calculate top band
-
     data["bollinger_down"] = data['20_day'] - data["std"] * 2  # Calculate bottom band
 
     data = data.drop(columns=['High', 'Low', 'Open', 'Close', 'Volume', '20_day', 'std'])
-
     data = data.to_json()
     return json.loads(data)
     
