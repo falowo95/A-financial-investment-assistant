@@ -1,9 +1,5 @@
 from flask import Flask, render_template, request, jsonify , session, redirect
-from main import daily_log_returns, daily_percentage_change
-from main import cumulative_daily_returns, bollinger_bands, closing_prices
-from main import simple_moving_averages, volatility_info, sharpe_ratio
-from main import cumulative_monthly_returns
-from main import prediction
+from main import *
 
 
 # exposes the api server on port 6900
